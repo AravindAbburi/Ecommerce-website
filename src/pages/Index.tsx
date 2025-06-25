@@ -100,9 +100,12 @@ const Index = () => {
                 <ShoppingBag className="h-5 w-5" />
                 Shop Now
               </Link>
-              <button className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-purple-600 transition-all">
+              <Link
+                to="/products"
+                className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-purple-600 transition-all"
+              >
                 View All Collections
-              </button>
+              </Link>
             </div>
           </div>
         </div>
