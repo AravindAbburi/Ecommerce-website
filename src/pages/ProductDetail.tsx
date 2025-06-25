@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import Header from "@/components/Header";
@@ -7,39 +6,39 @@ import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 
 // Mock product data - in real app, this would come from API
-const productDetails = {
+const productDetails: Record<number, any> = {
   1: {
     id: 1,
-    title: "iPhone 15 Pro Max 256GB",
-    originalPrice: 134900,
-    salePrice: 119900,
-    discount: 11,
+    title: "Traditional Kondapalli Dancing Doll Set",
+    originalPrice: 2500,
+    salePrice: 1999,
+    discount: 20,
     images: ["/placeholder.svg", "/placeholder.svg", "/placeholder.svg", "/placeholder.svg"],
-    category: "Electronics",
-    brand: "Apple",
+    category: "Traditional Toys",
+    brand: "Kondapalli Artisans",
     rating: 4.8,
-    reviews: 324,
+    reviews: 124,
     isFlashSale: true,
     timeLeft: "2h 35m",
-    description: "The iPhone 15 Pro Max features a stunning titanium design, A17 Pro chip, and advanced camera system. Experience the power of pro photography and videography in your pocket.",
+    description: "Exquisite handcrafted Kondapalli toys featuring traditional dancing dolls. Made from eco-friendly Tella Poniki wood by skilled artisans from Andhra Pradesh.",
     features: [
-      "6.7-inch Super Retina XDR display",
-      "A17 Pro chip with 6-core GPU",
-      "Pro camera system with 48MP main camera",
-      "Up to 29 hours video playback",
-      "USB-C connectivity",
-      "Face ID for secure authentication"
+      "100% eco-friendly Tella Poniki wood",
+      "Hand-painted with natural colors",
+      "Traditional Kondapalli craftsmanship",
+      "Set of 6 dancing dolls",
+      "Cultural heritage artwork",
+      "Perfect for home decoration"
     ],
     specifications: {
-      "Display": "6.7-inch Super Retina XDR",
-      "Chip": "A17 Pro",
-      "Storage": "256GB",
-      "Camera": "48MP + 12MP + 12MP",
-      "Battery": "Up to 29 hours video",
-      "OS": "iOS 17"
+      "Material": "Tella Poniki Wood",
+      "Origin": "Kondapalli, Andhra Pradesh",
+      "Set Size": "6 pieces",
+      "Height": "4-6 inches",
+      "Finish": "Hand-painted",
+      "Age Group": "All ages"
     },
     inStock: true,
-    stockCount: 25
+    stockCount: 15
   }
 };
 
@@ -86,7 +85,7 @@ const ProductDetail = () => {
           <span>/</span>
           <Link to="/products" className="hover:text-purple-600">Products</Link>
           <span>/</span>
-          <Link to={`/category/${product.category.toLowerCase()}`} className="hover:text-purple-600">
+          <Link to={`/category/${product.category.toLowerCase().replace(' ', '-')}`} className="hover:text-purple-600">
             {product.category}
           </Link>
           <span>/</span>
@@ -97,7 +96,7 @@ const ProductDetail = () => {
           {/* Product Images */}
           <div className="space-y-4">
             {/* Main Image */}
-            <div className="bg-white rounded-2xl p-4 shadow-sm border">
+            <div className="bg-white rounded-2xl p-4 shadow-sm border relative">
               <img
                 src={product.images[selectedImage]}
                 alt={product.title}
@@ -113,7 +112,7 @@ const ProductDetail = () => {
 
             {/* Thumbnail Images */}
             <div className="flex gap-2">
-              {product.images.map((image, index) => (
+              {product.images.map((image: string, index: number) => (
                 <button
                   key={index}
                   onClick={() => setSelectedImage(index)}
@@ -239,7 +238,7 @@ const ProductDetail = () => {
               <div className="text-center">
                 <Truck className="h-6 w-6 text-green-600 mx-auto mb-2" />
                 <p className="text-xs font-medium text-gray-700">Free Delivery</p>
-                <p className="text-xs text-gray-500">Above ₹999</p>
+                <p className="text-xs text-gray-500">Above ₹499</p>
               </div>
               <div className="text-center">
                 <RotateCcw className="h-6 w-6 text-blue-600 mx-auto mb-2" />
@@ -248,8 +247,8 @@ const ProductDetail = () => {
               </div>
               <div className="text-center">
                 <Shield className="h-6 w-6 text-purple-600 mx-auto mb-2" />
-                <p className="text-xs font-medium text-gray-700">Secure Payment</p>
-                <p className="text-xs text-gray-500">SSL Protected</p>
+                <p className="text-xs font-medium text-gray-700">Authentic</p>
+                <p className="text-xs text-gray-500">Handcrafted</p>
               </div>
             </div>
           </div>
@@ -268,7 +267,7 @@ const ProductDetail = () => {
             <div>
               <h3 className="text-xl font-bold text-gray-900 mb-4">Key Features</h3>
               <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                {product.features.map((feature, index) => (
+                {product.features.map((feature: string, index: number) => (
                   <li key={index} className="flex items-center gap-2">
                     <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
                     <span className="text-gray-700">{feature}</span>
@@ -284,7 +283,7 @@ const ProductDetail = () => {
                 {Object.entries(product.specifications).map(([key, value]) => (
                   <div key={key} className="flex justify-between items-center py-2 border-b border-gray-100">
                     <span className="font-medium text-gray-700">{key}:</span>
-                    <span className="text-gray-600">{value}</span>
+                    <span className="text-gray-600">{value as string}</span>
                   </div>
                 ))}
               </div>

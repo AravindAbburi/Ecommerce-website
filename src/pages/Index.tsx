@@ -9,63 +9,63 @@ import { Zap, TrendingUp, Star, ShoppingBag } from "lucide-react";
 const featuredDeals = [
   {
     id: 1,
-    title: "iPhone 15 Pro Max",
-    originalPrice: 134900,
-    salePrice: 119900,
-    discount: 11,
+    title: "Traditional Dancing Doll Set",
+    originalPrice: 2500,
+    salePrice: 1999,
+    discount: 20,
     image: "/placeholder.svg",
-    category: "Electronics",
+    category: "Traditional Toys",
     rating: 4.8,
-    reviews: 324,
+    reviews: 124,
     isFlashSale: true,
     timeLeft: "2h 35m"
   },
   {
     id: 2,
-    title: "Samsung 55\" QLED TV",
-    originalPrice: 89999,
-    salePrice: 64999,
-    discount: 28,
+    title: "Kondapalli Village Scene",
+    originalPrice: 3999,
+    salePrice: 2999,
+    discount: 25,
     image: "/placeholder.svg",
-    category: "Electronics",
+    category: "Home Decor",
     rating: 4.6,
-    reviews: 156,
+    reviews: 86,
     isFlashSale: false
   },
   {
     id: 3,
-    title: "Nike Air Max 270",
-    originalPrice: 12995,
-    salePrice: 8497,
-    discount: 35,
+    title: "Royal Elephant Figurine",
+    originalPrice: 1999,
+    salePrice: 1399,
+    discount: 30,
     image: "/placeholder.svg",
-    category: "Fashion",
+    category: "Figurines",
     rating: 4.7,
-    reviews: 89,
+    reviews: 67,
     isFlashSale: true,
     timeLeft: "5h 12m"
   },
   {
     id: 4,
-    title: "MacBook Air M2",
-    originalPrice: 114900,
-    salePrice: 99900,
-    discount: 13,
+    title: "Bride & Groom Doll Pair",
+    originalPrice: 3500,
+    salePrice: 2800,
+    discount: 20,
     image: "/placeholder.svg",
-    category: "Electronics",
+    category: "Traditional Toys",
     rating: 4.9,
-    reviews: 245,
+    reviews: 145,
     isFlashSale: false
   }
 ];
 
 const categories = [
-  { name: "All", count: 1200, active: true },
-  { name: "Electronics", count: 450, active: false },
-  { name: "Fashion", count: 320, active: false },
-  { name: "Home & Garden", count: 180, active: false },
-  { name: "Sports", count: 150, active: false },
-  { name: "Beauty", count: 100, active: false }
+  { name: "All", count: 450, active: true },
+  { name: "Traditional Dolls", count: 120, active: false },
+  { name: "Figurines", count: 95, active: false },
+  { name: "Home Decor", count: 80, active: false },
+  { name: "Gift Sets", count: 65, active: false },
+  { name: "Custom Orders", count: 90, active: false }
 ];
 
 const Index = () => {
@@ -82,15 +82,15 @@ const Index = () => {
           <div className="text-center max-w-4xl mx-auto">
             <div className="flex items-center justify-center gap-2 mb-4">
               <Zap className="h-8 w-8 text-yellow-300 animate-pulse" />
-              <span className="text-yellow-300 font-semibold text-lg">Flash Deals Live Now!</span>
+              <span className="text-yellow-300 font-semibold text-lg">Handcrafted Treasures!</span>
             </div>
             <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white to-yellow-200 bg-clip-text text-transparent">
-              Amazing Deals
+              Kondapalli Toys
               <br />
-              <span className="text-4xl md:text-6xl">Every Day</span>
+              <span className="text-4xl md:text-6xl">Traditional Craft</span>
             </h1>
             <p className="text-xl md:text-2xl mb-8 text-white/90">
-              Discover incredible offers on your favorite brands. Save up to 80% on electronics, fashion, and more!
+              Discover authentic handcrafted Kondapalli toys made from eco-friendly Tella Poniki wood by skilled artisans!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
@@ -101,7 +101,7 @@ const Index = () => {
                 Shop Now
               </Link>
               <button className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-purple-600 transition-all">
-                View All Deals
+                View All Collections
               </button>
             </div>
           </div>
@@ -118,7 +118,7 @@ const Index = () => {
             </div>
             <div>
               <h2 className="text-3xl font-bold text-gray-900">Flash Deals</h2>
-              <p className="text-gray-600">Limited time offers - Grab them fast!</p>
+              <p className="text-gray-600">Limited time offers - Grab these treasures fast!</p>
             </div>
           </div>
           
@@ -138,8 +138,8 @@ const Index = () => {
               <TrendingUp className="h-6 w-6 text-white" />
             </div>
             <div>
-              <h2 className="text-3xl font-bold text-gray-900">Trending Categories</h2>
-              <p className="text-gray-600">Explore popular deals by category</p>
+              <h2 className="text-3xl font-bold text-gray-900">Popular Categories</h2>
+              <p className="text-gray-600">Explore traditional crafts by category</p>
             </div>
           </div>
           
@@ -159,8 +159,8 @@ const Index = () => {
               <Star className="h-6 w-6 text-white" />
             </div>
             <div>
-              <h2 className="text-3xl font-bold text-gray-900">Featured Products</h2>
-              <p className="text-gray-600">Hand-picked deals just for you</p>
+              <h2 className="text-3xl font-bold text-gray-900">Featured Collection</h2>
+              <p className="text-gray-600">Hand-picked masterpieces from our artisans</p>
             </div>
           </div>
           
@@ -185,8 +185,8 @@ const Index = () => {
       {/* Newsletter Section */}
       <section className="py-16 bg-gradient-to-r from-purple-600 via-blue-600 to-pink-600 text-white">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-4">Never Miss a Deal!</h2>
-          <p className="text-xl mb-8 text-white/90">Get exclusive offers and flash sale alerts delivered to your inbox</p>
+          <h2 className="text-3xl font-bold mb-4">Stay Connected with Tradition!</h2>
+          <p className="text-xl mb-8 text-white/90">Get exclusive offers and new collection alerts delivered to your inbox</p>
           <div className="max-w-md mx-auto flex gap-4">
             <input
               type="email"

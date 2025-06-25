@@ -22,7 +22,7 @@ const Header = () => {
         <div className="flex items-center justify-between py-3 border-b border-gray-100">
           <div className="flex items-center gap-4">
             <span className="text-sm text-gray-600">📞 Support: 1800-123-4567</span>
-            <span className="text-sm text-gray-600">🚚 Free delivery on orders above ₹999</span>
+            <span className="text-sm text-gray-600">🚚 Free delivery on orders above ₹499</span>
           </div>
           <div className="hidden md:flex items-center gap-4 text-sm">
             <Link to="/track-order" className="text-gray-600 hover:text-purple-600">Track Order</Link>
@@ -35,13 +35,13 @@ const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
             <div className="w-10 h-10 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-xl">T</span>
+              <span className="text-white font-bold text-xl">K</span>
             </div>
             <div>
               <h1 className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
-                TataClip
+                Kondapalli Toys
               </h1>
-              <p className="text-xs text-gray-500">Amazing Deals Daily</p>
+              <p className="text-xs text-gray-500">Traditional Handcrafted</p>
             </div>
           </Link>
 
@@ -50,7 +50,7 @@ const Header = () => {
             <form onSubmit={handleSearch} className="flex w-full">
               <input
                 type="text"
-                placeholder="Search for products, brands, offers..."
+                placeholder="Search for traditional toys, dolls, crafts..."
                 className="flex-1 px-4 py-3 border border-gray-300 rounded-l-full focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
               />
               <Button
@@ -118,7 +118,7 @@ const Header = () => {
             <form onSubmit={handleSearch} className="flex gap-2">
               <input
                 type="text"
-                placeholder="Search products..."
+                placeholder="Search toys..."
                 className="flex-1 px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-purple-500"
               />
               <Button type="submit" size="sm" className="bg-purple-600 hover:bg-purple-700 rounded-full">
@@ -135,7 +135,7 @@ const Header = () => {
               <Link to="/products" className="text-gray-600 hover:text-purple-600">All Products</Link>
               <Link to="/categories" className="text-gray-600 hover:text-purple-600">Categories</Link>
               <Link to="/deals" className="text-gray-600 hover:text-purple-600">Flash Deals</Link>
-              <Link to="/brands" className="text-gray-600 hover:text-purple-600">Brands</Link>
+              <Link to="/brands" className="text-gray-600 hover:text-purple-600">Artisans</Link>
               <Link to="/track-order" className="text-gray-600 hover:text-purple-600">Track Order</Link>
               <Link to="/help" className="text-gray-600 hover:text-purple-600">Help & Support</Link>
             </nav>
@@ -148,11 +148,11 @@ const Header = () => {
         <div className="container mx-auto px-4">
           <nav className="flex items-center gap-8 py-3">
             <Link to="/products" className="text-gray-600 hover:text-purple-600 font-medium">All Products</Link>
-            <Link to="/electronics" className="text-gray-600 hover:text-purple-600">Electronics</Link>
-            <Link to="/fashion" className="text-gray-600 hover:text-purple-600">Fashion</Link>
-            <Link to="/home-garden" className="text-gray-600 hover:text-purple-600">Home & Garden</Link>
-            <Link to="/sports" className="text-gray-600 hover:text-purple-600">Sports</Link>
-            <Link to="/beauty" className="text-gray-600 hover:text-purple-600">Beauty</Link>
+            <Link to="/traditional-dolls" className="text-gray-600 hover:text-purple-600">Traditional Dolls</Link>
+            <Link to="/figurines" className="text-gray-600 hover:text-purple-600">Figurines</Link>
+            <Link to="/home-decor" className="text-gray-600 hover:text-purple-600">Home Decor</Link>
+            <Link to="/gift-sets" className="text-gray-600 hover:text-purple-600">Gift Sets</Link>
+            <Link to="/custom-orders" className="text-gray-600 hover:text-purple-600">Custom Orders</Link>
             <Link to="/deals" className="text-red-600 hover:text-red-700 font-medium flex items-center gap-1">
               🔥 Flash Deals
             </Link>

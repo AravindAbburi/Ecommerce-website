@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import Header from "@/components/Header";
 import CategoryFilter from "@/components/CategoryFilter";
@@ -9,88 +8,88 @@ import { Button } from "@/components/ui/button";
 const products = [
   {
     id: 1,
-    title: "iPhone 15 Pro Max 256GB",
-    originalPrice: 134900,
-    salePrice: 119900,
-    discount: 11,
+    title: "Traditional Dancing Doll Set",
+    originalPrice: 2500,
+    salePrice: 1999,
+    discount: 20,
     image: "/placeholder.svg",
-    category: "Electronics",
+    category: "Traditional Dolls",
     rating: 4.8,
-    reviews: 324,
+    reviews: 124,
     isFlashSale: true,
     timeLeft: "2h 35m"
   },
   {
     id: 2,
-    title: "Samsung 55\" QLED 4K Smart TV",
-    originalPrice: 89999,
-    salePrice: 64999,
-    discount: 28,
+    title: "Kondapalli Village Scene",
+    originalPrice: 3999,
+    salePrice: 2999,
+    discount: 25,
     image: "/placeholder.svg",
-    category: "Electronics",
+    category: "Home Decor",
     rating: 4.6,
-    reviews: 156,
+    reviews: 86,
     isFlashSale: false
   },
   {
     id: 3,
-    title: "Nike Air Max 270 Running Shoes",
-    originalPrice: 12995,
-    salePrice: 8497,
-    discount: 35,
+    title: "Royal Elephant Figurine",
+    originalPrice: 1999,
+    salePrice: 1399,
+    discount: 30,
     image: "/placeholder.svg",
-    category: "Fashion",
+    category: "Figurines",
     rating: 4.7,
-    reviews: 89,
+    reviews: 67,
     isFlashSale: true,
     timeLeft: "5h 12m"
   },
   {
     id: 4,
-    title: "MacBook Air M2 13-inch",
-    originalPrice: 114900,
-    salePrice: 99900,
-    discount: 13,
+    title: "Bride & Groom Doll Pair",
+    originalPrice: 3500,
+    salePrice: 2800,
+    discount: 20,
     image: "/placeholder.svg",
-    category: "Electronics",
+    category: "Traditional Dolls",
     rating: 4.9,
-    reviews: 245,
+    reviews: 145,
     isFlashSale: false
   },
   {
     id: 5,
-    title: "Sony WH-1000XM5 Headphones",
-    originalPrice: 29990,
-    salePrice: 22999,
-    discount: 23,
+    title: "Peacock Wall Hanging",
+    originalPrice: 1599,
+    salePrice: 1199,
+    discount: 25,
     image: "/placeholder.svg",
-    category: "Electronics",
+    category: "Home Decor",
     rating: 4.8,
-    reviews: 412,
+    reviews: 92,
     isFlashSale: true,
     timeLeft: "1h 45m"
   },
   {
     id: 6,
-    title: "Adidas Ultraboost 22",
-    originalPrice: 16999,
-    salePrice: 11999,
-    discount: 29,
+    title: "Lord Ganesha Figurine",
+    originalPrice: 2299,
+    salePrice: 1799,
+    discount: 22,
     image: "/placeholder.svg",
-    category: "Fashion",
+    category: "Figurines",
     rating: 4.6,
-    reviews: 203,
+    reviews: 103,
     isFlashSale: false
   }
 ];
 
 const categories = [
-  { name: "All", count: 1200, active: true },
-  { name: "Electronics", count: 450, active: false },
-  { name: "Fashion", count: 320, active: false },
-  { name: "Home & Garden", count: 180, active: false },
-  { name: "Sports", count: 150, active: false },
-  { name: "Beauty", count: 100, active: false }
+  { name: "All", count: 450, active: true },
+  { name: "Traditional Dolls", count: 120, active: false },
+  { name: "Figurines", count: 95, active: false },
+  { name: "Home Decor", count: 80, active: false },
+  { name: "Gift Sets", count: 65, active: false },
+  { name: "Custom Orders", count: 90, active: false }
 ];
 
 const Products = () => {
@@ -109,8 +108,8 @@ const Products = () => {
       <div className="container mx-auto px-4 py-8">
         {/* Page Header */}
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">All Products</h1>
-          <p className="text-gray-600">Discover amazing deals on your favorite products</p>
+          <h1 className="text-3xl font-bold text-gray-900 mb-2">All Traditional Toys</h1>
+          <p className="text-gray-600">Discover authentic handcrafted Kondapalli treasures</p>
         </div>
 
         {/* Filters */}
@@ -170,7 +169,7 @@ const Products = () => {
         {/* Results Count */}
         <div className="flex items-center justify-between mb-6">
           <p className="text-gray-600">
-            Showing {filteredProducts.length} of {products.length} products
+            Showing {filteredProducts.length} of {products.length} traditional toys
           </p>
           <Button variant="outline" className="flex items-center gap-2">
             <Filter className="h-4 w-4" />
@@ -194,7 +193,7 @@ const Products = () => {
           <Button 
             className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-8 py-3 rounded-full font-medium"
           >
-            Load More Products
+            Load More Traditional Toys
           </Button>
         </div>
       </div>
