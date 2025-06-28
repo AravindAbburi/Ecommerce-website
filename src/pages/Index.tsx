@@ -1,205 +1,161 @@
-
-import { useState } from "react";
-import { Link } from "react-router-dom";
-import Header from "@/components/Header";
-import CategoryFilter from "@/components/CategoryFilter";
-import ProductCard from "@/components/ProductCard";
-import { Zap, TrendingUp, Star, ShoppingBag } from "lucide-react";
-
-const featuredDeals = [
-  {
-    id: 1,
-    title: "Traditional Dancing Doll Set",
-    originalPrice: 2500,
-    salePrice: 1999,
-    discount: 20,
-    image: "/placeholder.svg",
-    category: "Traditional Toys",
-    rating: 4.8,
-    reviews: 124,
-    isFlashSale: true,
-    timeLeft: "2h 35m"
-  },
-  {
-    id: 2,
-    title: "Kondapalli Village Scene",
-    originalPrice: 3999,
-    salePrice: 2999,
-    discount: 25,
-    image: "/placeholder.svg",
-    category: "Home Decor",
-    rating: 4.6,
-    reviews: 86,
-    isFlashSale: false
-  },
-  {
-    id: 3,
-    title: "Royal Elephant Figurine",
-    originalPrice: 1999,
-    salePrice: 1399,
-    discount: 30,
-    image: "/placeholder.svg",
-    category: "Figurines",
-    rating: 4.7,
-    reviews: 67,
-    isFlashSale: true,
-    timeLeft: "5h 12m"
-  },
-  {
-    id: 4,
-    title: "Bride & Groom Doll Pair",
-    originalPrice: 3500,
-    salePrice: 2800,
-    discount: 20,
-    image: "/placeholder.svg",
-    category: "Traditional Toys",
-    rating: 4.9,
-    reviews: 145,
-    isFlashSale: false
-  }
-];
-
-const categories = [
-  { name: "All", count: 450, active: true },
-  { name: "Traditional Dolls", count: 120, active: false },
-  { name: "Figurines", count: 95, active: false },
-  { name: "Home Decor", count: 80, active: false },
-  { name: "Gift Sets", count: 65, active: false },
-  { name: "Custom Orders", count: 90, active: false }
-];
+import React from "react";
 
 const Index = () => {
-  const [selectedCategory, setSelectedCategory] = useState("All");
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-blue-50 to-pink-50">
-      <Header />
-      
+    <div
+      className="min-h-screen bg-gradient-to-br from-purple-50 via-blue-50 to-pink-50"
+      style={{
+        fontFamily:
+          "'Ancizar Serif', 'Cormorant Garamond', 'EB Garamond', 'PT Serif', 'Playfair Display', 'Spectral', serif",
+      }}
+    >
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-r from-purple-600 via-blue-600 to-pink-600 text-white">
         <div className="absolute inset-0 bg-black/20"></div>
         <div className="relative container mx-auto px-4 py-20">
           <div className="text-center max-w-4xl mx-auto">
-            <div className="flex items-center justify-center gap-2 mb-4">
-              <Zap className="h-8 w-8 text-yellow-300 animate-pulse" />
-              <span className="text-yellow-300 font-semibold text-lg">Handcrafted Treasures!</span>
-            </div>
             <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white to-yellow-200 bg-clip-text text-transparent">
               Kondapalli Toys
-              <br />
-              <span className="text-4xl md:text-6xl">Traditional Craft</span>
             </h1>
             <p className="text-xl md:text-2xl mb-8 text-white/90">
-              Discover authentic handcrafted Kondapalli toys made from eco-friendly Tella Poniki wood by skilled artisans!
+              Celebrating the legacy, artisans, and cultural heritage of
+              Kondapalli's world-famous wooden toys.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                to="/products"
-                className="bg-white text-purple-600 px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-all transform hover:scale-105 flex items-center gap-2"
-              >
-                <ShoppingBag className="h-5 w-5" />
-                Shop Now
-              </Link>
-              <Link
-                to="/products"
-                className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-purple-600 transition-all"
-              >
-                View All Collections
-              </Link>
-            </div>
           </div>
         </div>
         <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-purple-50 to-transparent"></div>
       </section>
 
-      {/* Flash Deals Section */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <div className="flex items-center gap-3 mb-8">
-            <div className="bg-gradient-to-r from-red-500 to-orange-500 p-3 rounded-full">
-              <Zap className="h-6 w-6 text-white" />
-            </div>
-            <div>
-              <h2 className="text-3xl font-bold text-gray-900">Flash Deals</h2>
-              <p className="text-gray-600">Limited time offers - Grab these treasures fast!</p>
-            </div>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {featuredDeals.filter(deal => deal.isFlashSale).map((deal) => (
-              <ProductCard key={deal.id} product={deal} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Categories Section */}
-      <section className="py-16 bg-white/50">
-        <div className="container mx-auto px-4">
-          <div className="flex items-center gap-3 mb-8">
-            <div className="bg-gradient-to-r from-blue-500 to-purple-500 p-3 rounded-full">
-              <TrendingUp className="h-6 w-6 text-white" />
-            </div>
-            <div>
-              <h2 className="text-3xl font-bold text-gray-900">Popular Categories</h2>
-              <p className="text-gray-600">Explore traditional crafts by category</p>
-            </div>
-          </div>
-          
-          <CategoryFilter 
-            categories={categories} 
-            selectedCategory={selectedCategory}
-            onCategorySelect={setSelectedCategory}
-          />
-        </div>
-      </section>
-
-      {/* Featured Products */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <div className="flex items-center gap-3 mb-8">
-            <div className="bg-gradient-to-r from-green-500 to-teal-500 p-3 rounded-full">
-              <Star className="h-6 w-6 text-white" />
-            </div>
-            <div>
-              <h2 className="text-3xl font-bold text-gray-900">Featured Collection</h2>
-              <p className="text-gray-600">Hand-picked masterpieces from our artisans</p>
-            </div>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {featuredDeals.map((product) => (
-              <ProductCard key={product.id} product={product} />
-            ))}
-          </div>
-          
-          <div className="text-center mt-12">
-            <Link
-              to="/products"
-              className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-8 py-4 rounded-full font-semibold hover:shadow-lg transition-all transform hover:scale-105 inline-flex items-center gap-2"
-            >
-              View All Products
-              <TrendingUp className="h-5 w-5" />
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Newsletter Section */}
+      {/* About Section */}
       <section className="py-16 bg-gradient-to-r from-purple-600 via-blue-600 to-pink-600 text-white">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-4">Stay Connected with Tradition!</h2>
-          <p className="text-xl mb-8 text-white/90">Get exclusive offers and new collection alerts delivered to your inbox</p>
-          <div className="max-w-md mx-auto flex gap-4">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="flex-1 px-4 py-3 rounded-full text-gray-900 border-0 focus:ring-4 focus:ring-white/30 outline-none"
-            />
-            <button className="bg-white text-purple-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors">
-              Subscribe
-            </button>
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-4xl font-bold mb-6">The Art of Kondapalli</h2>
+              <p className="text-lg mb-6 text-white/90 leading-relaxed">
+                Discover the 400-year-old legacy of handcrafted wooden toys from
+                the heart of Andhra Pradesh. Each piece tells a story of
+                tradition, craftsmanship, and cultural heritage.
+              </p>
+              <div className="space-y-4 mb-8">
+                <div className="flex items-center gap-3">
+                  <span className="font-bold">400+ Years</span> of Traditional
+                  Craftsmanship
+                </div>
+                <div className="flex items-center gap-3">
+                  <span className="font-bold">50+ Artisans</span> keep the
+                  tradition alive
+                </div>
+                <div className="flex items-center gap-3">
+                  <span className="font-bold">GI Tagged</span> Authentic
+                  Products
+                </div>
+                <div className="flex items-center gap-3">
+                  <span className="font-bold">Kondapalli, Andhra Pradesh</span>
+                </div>
+              </div>
+            </div>
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+              <h3 className="text-2xl font-bold mb-6">
+                Meet Our Master Artisans
+              </h3>
+              <div className="space-y-6">
+                <div className="flex items-center gap-4 p-4 bg-white/10 rounded-xl">
+                  <div className="w-12 h-12 bg-yellow-300 rounded-full flex items-center justify-center">
+                    <span className="text-purple-600 font-bold text-xl">
+                      VR
+                    </span>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold">Sri Venkateswara Rao</h4>
+                    <p className="text-white/80 text-sm">
+                      Traditional Dolls • 45 years experience
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-4 p-4 bg-white/10 rounded-xl">
+                  <div className="w-12 h-12 bg-yellow-300 rounded-full flex items-center justify-center">
+                    <span className="text-purple-600 font-bold text-xl">
+                      LD
+                    </span>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold">Smt. Lakshmi Devi</h4>
+                    <p className="text-white/80 text-sm">
+                      Animal Figurines • 40 years experience
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-4 p-4 bg-white/10 rounded-xl">
+                  <div className="w-12 h-12 bg-yellow-300 rounded-full flex items-center justify-center">
+                    <span className="text-purple-600 font-bold text-xl">
+                      KP
+                    </span>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold">Sri Krishna Prasad</h4>
+                    <p className="text-white/80 text-sm">
+                      Mythological Characters • 35 years experience
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section className="py-16 bg-white/90">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-10 text-purple-700">
+            Why Kondapalli Toys?
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-purple-50 rounded-xl p-8 shadow-md text-center">
+              <h3 className="text-xl font-bold mb-2 text-purple-600">
+                Eco-Friendly Wood
+              </h3>
+              <p className="text-gray-700">
+                Made from locally sourced Tella Poniki wood, safe for children
+                and the environment.
+              </p>
+            </div>
+            <div className="bg-purple-50 rounded-xl p-8 shadow-md text-center">
+              <h3 className="text-xl font-bold mb-2 text-purple-600">
+                Hand-Painted Masterpieces
+              </h3>
+              <p className="text-gray-700">
+                Each toy is hand-painted with natural dyes, making every piece
+                unique.
+              </p>
+            </div>
+            <div className="bg-purple-50 rounded-xl p-8 shadow-md text-center">
+              <h3 className="text-xl font-bold mb-2 text-purple-600">
+                Cultural Heritage
+              </h3>
+              <p className="text-gray-700">
+                A proud tradition recognized with a Geographical Indication (GI)
+                tag.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Call to Action */}
+      <section className="py-16 bg-gradient-to-r from-purple-600 via-blue-600 to-pink-600 text-white text-center">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold mb-4">Support Our Artisans</h2>
+          <p className="text-xl mb-8 text-white/90">
+            Bring home a piece of Indian heritage and empower local craftsmen.
+          </p>
+          <a
+            href="/products"
+            className="bg-white text-purple-600 px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-all transform hover:scale-105 inline-block"
+          >
+            Shop Kondapalli Toys
+          </a>
         </div>
       </section>
     </div>
