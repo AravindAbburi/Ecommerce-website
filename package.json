@@ -4,11 +4,15 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "start": "node server.js",
     "dev": "vite",
     "build": "vite build",
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "server": "node server.js",
+    "server:dev": "nodemon server.js",
+    "vercel-build": "vite build"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
@@ -92,6 +96,7 @@
     "tsx": "^4.20.3",
     "typescript": "^5.5.3",
     "typescript-eslint": "^8.0.1",
+    "vercel": "^44.2.7",
     "vite": "^5.4.1"
   },
   "description": "**URL**: https://lovable.dev/projects/9b89a467-9bf4-464b-8529-b5a77ed02ea6",

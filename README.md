@@ -234,5 +234,3 @@ npm run format       # Format code with Prettier
 - **Traditional Techniques** - 400+ years of craftsmanship
 - **Artisan Stories** - Meet the master craftsmen
 - **Cultural Significance** - Preserving Indian heritage
-
-
